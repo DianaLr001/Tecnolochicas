@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
+<link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+ <title> Mi primera Página </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <style>
+         *{
+               font-family: 'Neucha', cursive;
+          }
+          aside {
+                width:20%;
+                margin-right:32px;
+                display:flex;
+                align-items:flex-end;
+                flex-direction:column;
+                justify-content:flex-start;
+         }
+         aside > div {
+                border: 1px solid gray;
+                padding:16px;
+                display:flex;
+                flex-direction:column;
+                width:70%
+                margin-top=80px;
+         }
+         content {
+                width:60%;
+                display:flex;
+                flex-direction:column;
+         }
+         html, body {
+                display:flex;
+                flex-direction:column;
+                height:100%;
+                margin:0px;
+                padding:0px;
+         }
+         body {
+                display:flex;
+                flex-direction:column;
+                align-items:center;
+                background:#F5F5F5;
+         }
+         .bold-text {
+                font-weight:bold;
+         }
+         footer {
+                width:1349px;
+                margin-top:auto;
+                display:flex;
+                justify-content:center;
+                background:#EBF3E7;
+
+         }
+         .footer__section {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+         }
+         .navigation-bar li {
+                display: inline-block;
+         }
+         .navigation-bar ul {
+                margin: 0px;
+                padding: 0px;
+                border: 1px solid #F5F5F5;
+         }
+         .navigation-bar li a {
+                display: block;
+                color: #EBF3E7;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+         }
+         .navigation-bar li a:hover:not(.active) {
+                background-color:#EBF3E7;
+         }
+         .navigation-bar li a.active {
+                color: black;
+                background-color: #EBF3E7;
+         }
+         .navigation-bar .menu__hamburger-icon {
+                display: none;
+         }
+         @media screen and (max-width: 600px) {
+            .navigation-bar .menu__hamburger-icon {
+                display: block;
+                float: right;
+         }
+         }
+          @media screen and (max-width: 600px) {
+            #navigation-bar li:not(:first-child):not(.menu__hamburger-icon) {
+                display: none;
+         }
+         .navigation-bar .menu__hamburger-icon {
+                display: block;
+                float: right;
+         }
+         .navigation-bar.responsive .menu__hamburger-icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+         }
+          .navigation-bar.responsive .menu__hamburger-icon a {
+                color: black;
+            }
+            #navigation-bar.responsive li {
+                float: none;
+                display: block !important;
+            }
+            #navigation-bar.responsive li a{
+                text-align: left;
+            }
+         }
+        #main-content-container {
+            display: flex;
+        }
+
+        #links-sidebar {
+            flex: 2;
+        }
+       .link-sidebar {
+            flex: 2;
+            padding: 10px;
+       }
+       .link-sidebar ul{
+            padding: 0 0 0 10px;
+       }
+       .link-sidebar li{
+            list-style: none;
+       }
+       @media screen and (max-width: 600px) {
+            .link-sidebar {
+              display: none;
+            }  
+       }
+        #main-content {
+            flex: 6;
+            padding: 10px 20% 10px 10px;
+        }
+        @media screen and (max-width: 600px) {
+            .main-content {
+              padding-right:10px;
+            }  
+        }
+        @media screen and (max-width: 600px) {
+            .footer {
+              flex-direction: column;
+            }  
+        
+       .footer__section {
+            border-bottom: 1px solid;
+            padding-bottom: 10px; 
+            } 
+       } 
+       .footer__more-sites ul {
+            padding: 0 0 0 10px; 
+       }
+       .footer__more-sites li {
+            list-style: none;  
+       }
+        .main-content__img--full-width {
+            width: 100%;
+         }
+        #footer {
+            padding: 0 20px 20px 20px;
+            margin-top: auto;
+            display: flex;
+            background: #EBF3E7;
+        }
+
+        .footer__section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+         .social__networks {
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+         }
+         .social__networks {
+                display: flex;
+                align-items:center;
+         }
+         .social__icon {
+                font-size: 32px;
+         }
+         .social__icon-handler {
+                margin-left: 10px;
+         }
+         input[type=email], textarea {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 3px solid #cdd4c9;
+            transition: 0.5s;
+            outline: none;
+         }
+        input[type=email]:focus, textarea:focus {
+            border: 3px solid #98a192;
+        }
+        input[type=submit] {
+            background: #b2baad;
+            border: none;
+            color: black;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+         a{
+                text-decoration: none;
+                color: inherit;
+         }
+         a:hover {
+                text-decoration: underline;
+                text-underline-offset: 3px;
+         }
+    </style>
+
+    <script>
+    function myFunction() {
+        const navigationBar = document.getElementById("navigation-bar");
+        if (navigationBar.className === "navigation-bar") {
+            navigationBar.className += " responsive";
+        } else {
+            navigationBar.className = "navigation-bar";
+        }
+    }
+    </script>
+
+
+</head>
+
+<body>
+
+
+          <br><br>
+
+         <img src="imagen12.gif" width="200px">
+ 
+          <br><br>
+
+
+
+    <nav id="navigation-bar" class="navigation-bar">
+          <ul>
+               <li><a class="active" href="Astronomía (Agujeros Negros).html">Inicio</a></li>
+               <li><a class="active" href="Tipos de Agujeros Negros.html">Tipos</a></li>
+               <li><a class="active" href="Clases de Agujeros Negros.html">Clases</a></li>
+               <li><a class="active" href="Investigadores.html">Investigadores</a></li>
+
+               <li class="menu__hamburger-icon">
+                  <a  href="javascript:void(0);" onclick="myFunction()">
+                  <i class="lni lni-menu"></i>
+                  </a>
+                </li>
+
+          </ul>
+    </nav>
+
+
+<br><br>
+
+
+    <main id="main-content-container">
+
+    <aside id="links-sidebar">
+
+         <div>
+
+         <header style="background: #EBF3E7">
+
+
+       <h3><p align=center>Sitios de Interés</p></h3>
+         <br><br><br><br><br><br>
+                             
+                 <p align="center"><a href="Tipos de Agujeros Negros.html">Tipos de Agujeros Negros</a></p>
+                             
+         <br><br><br><br><br><br><br>
+                             
+                 <p align="center"><a href="Clases de Agujeros Negros.html">Clases de Agujeros negros</a></p>
+                             
+         <br><br><br><br><br><br><br>
+                             
+                 <p align="center"><a href="Investigadores.html">Investigadores</a></p>
+         <br><br><br><br><br><br><br>
+                 <p align="center"><a href="https://newton.proyectodescartes.org/juegosdidacticos/index.php?option=com_k2&view=item&id=1508:agujero-negro&Itemid=609&lang=es" target="Juego (Ajueros Negros)">Juego (Agujeros Negros)</a></p>
+                             
+         <br><br><br><br><br><br><br>
+
+
+
+         </header>
+          </div>
+
+    </aside>
+
+
+          <content id="main-content">
+                 
+
+          <header style="background: #d2dafa">
+                 <h1 id="greeting" align=center><font color="black">AGUJEROS NEGROS</h1>
+          </header>
+                
+
+                 <img src="imagen1.jpg" width="809px">
+                 
+                 <br><br>
+
+                      <p align=justify>
+                      Un agujero negro es un objeto astronómico con una fuerza gravitatoria tan fuerte que nada, ni siquiera la luz, puede escapar de él. 
+                      La superficie de un agujero negro, denominada horizonte de eventos, define el límite donde la velocidad requerida para evadirlo excede la velocidad de la luz, 
+                      que es el límite de velocidad en el cosmos. <br><br>      
+                      </p>
+
+                      <p align=justify>
+                      Los científicos detectaron por primera vez las ondas gravitacionales, las mismas ondas del tejido del espacio-tiempo que un siglo antes había predicho Albert Einstein, 
+                      en su teoría general de la relatividad. LIGO detectó las ondas de un evento ocurrido hace 1.300 millones de años, conocido como GW150914, en el que dos agujeros negros 
+                      giraban entre sí, en espiral, mientras se fusionaban. Desde entonces y a través del estudio de las ondas gravitacionales, LIGO y otras instalaciones han observado numerosas 
+                      fusiones de agujeros negros. 
+                      </p>
+                      <br>
+                      <p align="center"> 
+                      <strong>Durante este tiempo en el mes de mayo se localizó un agujero negro en el centro de la vía láctea. </strong> 
+                      </p>
+                      
+          </content>
+
+    </main>
+
+<br><br>
+
+    <footer id="footer">
+
+      <div class="footer__social footer__section">
+              <h3>Mis redes</h3>
+
+              <div class="social__networsk">
+
+                  <div class="social__networks">
+                      <span class="social__icon-container"><i class="lni lni-github-original social__icon"></i></span>
+                      <span class="social__icon-handler"><a href="https://github.com/DianaLr001"> @DianaLr001 </a></span>
+                  </div>
+
+                  <div class="social__networks">
+                      <span class="social__icon-container"><i class="lni lni-instagram-filled social__icon"></i></span>
+                      <span class="social__icon-handler"><a href="https://instagram.com/nala.lr?"> @nala.lr </a></span>
+                  </div>
+
+              </div>
+
+       </div>
+
+           <div class="footer__contact-form footer__section">
+           <h3> Contacto </h3>
+           <div>
+            <form>
+                <label for="contactEmail"> Correo electronico:</label>
+                <input id="contactEmail" required type="email" placeholder="Ingresa tu correo electronico">
+
+                <label for="contactMessage"> Mensaje:</label>
+                <textarea id="contactMessage" required rows="4" cols="50"> </textarea>
+
+                <input type="submit" value="Enviar">
+            </form>
+           </div>
+           </div>
+
+           <div class="footer__more-sites footer__section">
+           <h3> Otros de mis sitios</h3>
+           <ul>
+                <li><a href="Tipos de Agujeros Negros.html">Sitio 1</a></li>
+                <br>
+                <li><a href="Clases de Agujeros Negros.html">Sitio 2</a></li>
+                <br>
+                <li><a href="Investigadores.html">Sitio 3</a></li>
+           </ul>
+           </div>
+
+    </footer>
+
+  </body>
+</html>
